@@ -22,6 +22,8 @@ description: >-
   vehicle markets.
 apis: []
 common:
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/borgwarner
   - type: Website
     url: https://www.borgwarner.com
   - type: InvestorRelations
