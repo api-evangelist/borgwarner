@@ -23,6 +23,8 @@ description: >-
   vehicle markets.
 apis: []
 common:
+  - type: DomainSecurity
+    url: security/borgwarner-domain-security.yml
   - type: LinkedIn
     url: https://www.linkedin.com/company/borgwarner
   - type: Website
@@ -35,6 +37,8 @@ common:
     url: https://www.borgwarner.com/careers
   - type: Sustainability
     url: https://www.borgwarner.com/sustainability
+  - url: https://www.borgwarner.com/newsroom/press-releases
+    type: Blog
 properties:
   - type: x-domain
     value: borgwarner.com
