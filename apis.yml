@@ -36,7 +36,7 @@ image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/borgwarner
 access: 3rd-Party
 created: '2026-03-21'
 modified: '2026-04-21'
-position: Consumer
+position: Consuming
 description: >-
   BorgWarner is a global automotive supplier designing and manufacturing propulsion
   systems, thermal management, battery systems, charging solutions, and power
