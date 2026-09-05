@@ -1,0 +1,18 @@
+generated: '2026-09-04'
+method: searched
+source: https://www.borgwarner.com/api/default
+note: >-
+  BorgWarner publishes no API documentation, so no rate limits are documented. The one
+  reachable API-shaped surface (the Sitefinity OData v4 service at /api/default) is
+  auth-gated and returned no RateLimit-*, X-RateLimit-* or Retry-After header on its
+  401 response, so nothing could be observed at runtime either. limit_count: 0 is an
+  honest zero.
+limit_count: 0
+limits: []
+headers_observed: []
+x-evidence:
+  checked: '2026-09-04'
+  probes:
+    - url: https://www.borgwarner.com/api/default/$metadata
+      status: 401
+      note: response headers carried odata-version and www-authenticate only; no rate-limit headers

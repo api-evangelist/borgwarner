@@ -1,0 +1,83 @@
+generated: '2026-09-04'
+method: probed
+source: https://www.borgwarner.com/.well-known/oauth-authorization-server
+note: >-
+  Probed the closed, named /.well-known/ path list on every host this record knows —
+  the registrable domain (borgwarner.com redirects to www), the www host, and
+  portal.borgwarner.com (the only extra host that resolves in DNS; api., developer.,
+  docs., dev. and apis. do not resolve). Exactly one path returned a real document:
+  RFC 8414 OAuth 2.0 Authorization Server Metadata on www.borgwarner.com. That
+  document is served by Progress Sitefinity, the CMS that runs borgwarner.com — its
+  endpoints are /sitefinity/oauth/authorize and /sitefinity/oauth/token — so it
+  describes the site platform's own OAuth surface, not a BorgWarner product API.
+  It is recorded because BorgWarner genuinely serves it from their own host, not as
+  evidence of a developer program: none was found (see x-coverage in apis.yml).
+  Every other path returned a hard 404 with the site's own error page.
+hit_count: 1
+hosts:
+  - host: https://www.borgwarner.com
+    path_echo_control: passed
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 200
+        file: borgwarner-oauth-authorization-server.json
+        content_type: application/json
+      - path: /.well-known/oauth-protected-resource
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+      - path: /.well-known/apis.json
+        status: 404
+      - path: /apis.json
+        status: 404
+      - path: /apis.yml
+        status: 404
+      - path: /.well-known/aauth-resource.json
+        status: 404
+      - path: /.well-known/agent-card.json
+        status: 404
+      - path: /.well-known/agent.json
+        status: 404
+      - path: /.well-known/borgwarner-negative-control-7f3ab91c.json
+        status: 404
+        note: negative control — a path that cannot exist; a 2xx here would void every hit on this host
+  - host: https://portal.borgwarner.com
+    path_echo_control: passed
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/oauth-protected-resource
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+      - path: /.well-known/apis.json
+        status: 404
+      - path: /apis.json
+        status: 404
+      - path: /apis.yml
+        status: 404
+      - path: /.well-known/aauth-resource.json
+        status: 404
+      - path: /.well-known/agent-card.json
+        status: 404
+      - path: /.well-known/agent.json
+        status: 404
+      - path: /.well-known/borgwarner-negative-control-7f3ab91c.json
+        status: 404
+        note: negative control — a path that cannot exist; a 2xx here would void every hit on this host
+x-evidence:
+  checked: '2026-09-04'
+  hosts_resolved: [www.borgwarner.com, borgwarner.com, portal.borgwarner.com]
+  hosts_not_resolved: [api.borgwarner.com, developer.borgwarner.com, docs.borgwarner.com, apis.borgwarner.com, dev.borgwarner.com]

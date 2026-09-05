@@ -1,0 +1,33 @@
+generated: '2026-09-04'
+method: searched
+source: registry search — npm, PyPI, GitHub
+note: >-
+  No first-party BorgWarner client library exists in any public package registry, and
+  BorgWarner has no GitHub organization to derive candidates from. This is a recorded
+  zero, not an unchecked field.
+package_count: 0
+packages: []
+registries_probed:
+  - registry: npm
+    query: https://registry.npmjs.org/-/v1/search?text=borgwarner
+    status: 200
+    results: 0
+  - registry: pypi
+    query: https://pypi.org/pypi/borgwarner/json
+    status: 404
+    results: 0
+  - registry: github
+    query: https://api.github.com/orgs/borgwarner
+    status: 404
+    results: 0
+    note: >-
+      github.com/borgwarner, github.com/BorgWarner and github.com/borgwarner-inc all
+      return 404 — no GitHub organization under any of those names.
+  - registry: cdn
+    status: null
+    results: 0
+    note: >-
+      No CDN-distributed first-party build either; borgwarner.com serves only its own
+      Sitefinity bundles from /Assets/, which are site assets and not a published SDK.
+x-evidence:
+  checked: '2026-09-04'

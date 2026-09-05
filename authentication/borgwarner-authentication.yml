@@ -1,0 +1,66 @@
+generated: '2026-09-04'
+method: probed
+source: https://www.borgwarner.com/.well-known/oauth-authorization-server
+docs: null
+note: >-
+  There is no OpenAPI in this repo, so derive-authentication.py had nothing to read.
+  This profile is built entirely from responses observed on BorgWarner-controlled hosts
+  on 2026-09-04. SCOPE: both schemes below belong to the Progress Sitefinity CMS that
+  serves www.borgwarner.com — an authenticated-content / site-services surface, not a
+  BorgWarner product API. BorgWarner publishes no developer authentication guide,
+  no key issuance flow and no scope reference.
+summary:
+  types: [oauth2, http]
+  api_key_in: []
+  oauth2_flows: [authorizationCode]
+  pkce: S256
+  discovery_document: well-known/borgwarner-oauth-authorization-server.json
+schemes:
+  - name: sitefinity-oauth2
+    type: oauth2
+    source: https://www.borgwarner.com/.well-known/oauth-authorization-server
+    discovered_via: RFC 8414 authorization server metadata
+    issuer: http://www.borgwarner.com
+    flows:
+      - flow: authorizationCode
+        authorizationUrl: http://www.borgwarner.com/sitefinity/oauth/authorize
+        tokenUrl: http://www.borgwarner.com/sitefinity/oauth/token
+        refreshable: true
+        code_challenge_methods: [S256]
+        scopes: {}
+        scopes_note: >-
+          The metadata document declares no scopes_supported, so there is no scope
+          reference to capture — scopes/ is deliberately not written for this provider.
+    observations:
+      - >-
+        The issuer and both endpoint URLs are published as http:// (not https://) in the
+        provider's own metadata document, while the host itself serves and redirects to
+        HTTPS. Recorded verbatim, not corrected.
+      - >-
+        GET /sitefinity/oauth/authorize with no parameters returned HTTP 400
+        "error: invalid_request", confirming a live OAuth authorize endpoint rather
+        than a CMS page.
+  - name: sitefinity-odata-bearer
+    type: http
+    scheme: bearer
+    source: https://www.borgwarner.com/api/default
+    discovered_via: WWW-Authenticate challenge on the OData v4 service
+    protected_resource: https://www.borgwarner.com/api/default
+    observed_challenge:
+      - 'WWW-Authenticate: Bearer'
+      - 'WWW-Authenticate: Cookie realm="https://www.borgwarner.com/", cookie-name=".AspNet.Cookies"'
+    status_observed: 401
+x-evidence:
+  checked: '2026-09-04'
+  probes:
+    - url: https://www.borgwarner.com/.well-known/oauth-authorization-server
+      status: 200
+      content_type: application/json
+    - url: https://www.borgwarner.com/sitefinity/oauth/authorize
+      status: 400
+      body: 'error: invalid_request'
+    - url: https://www.borgwarner.com/api/default/$metadata
+      status: 401
+      content_type: application/json; odata.metadata=minimal
+    - url: https://www.borgwarner.com/.well-known/openid-configuration
+      status: 404

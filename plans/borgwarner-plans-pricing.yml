@@ -1,0 +1,22 @@
+generated: '2026-09-04'
+method: searched
+source: https://www.borgwarner.com/home
+note: >-
+  BorgWarner sells propulsion hardware to vehicle OEMs and industrial customers under
+  negotiated long-term supply programs. There is no API product, therefore no API plans,
+  no self-serve tiers, no published price list and no "contact sales for API access"
+  page — the commercial motion is a program award, not a subscription. plan_count: 0 is
+  the finding, not a gap in the search.
+plan_count: 0
+plans: []
+x-evidence:
+  checked: '2026-09-04'
+  probes:
+    - url: https://www.borgwarner.com/home
+      status: 200
+      note: no pricing, plans or developer navigation in the site menu
+    - url: https://developer.borgwarner.com/
+      status: 0
+      note: host does not resolve in DNS
+    - url: https://www.borgwarner.com/api-docs
+      status: 404

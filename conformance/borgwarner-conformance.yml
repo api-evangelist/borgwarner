@@ -1,0 +1,68 @@
+generated: '2026-09-04'
+method: probed
+source: https://www.borgwarner.com/.well-known/oauth-authorization-server
+note: >-
+  BorgWarner publishes no OpenAPI, AsyncAPI, GraphQL SDL, .proto or WSDL, so nothing
+  here is derived from a contract. Every entry below is anchored to a response this
+  pass actually observed on a BorgWarner-controlled host. The two positives both belong
+  to the Progress Sitefinity platform that runs www.borgwarner.com, not to a BorgWarner
+  product API — they are recorded as observed facts about the surface, not as a claim
+  that BorgWarner ships a developer API.
+standards:
+  - id: rfc8414-oauth-authorization-server-metadata
+    conforms: true
+    evidence: >-
+      https://www.borgwarner.com/.well-known/oauth-authorization-server returned HTTP 200
+      application/json carrying issuer, authorization_endpoint, token_endpoint,
+      response_types_supported, grant_types_supported and code_challenge_methods_supported.
+    saved: well-known/borgwarner-oauth-authorization-server.json
+  - id: oauth2
+    conforms: true
+    evidence: >-
+      The RFC 8414 document declares grant_types_supported [authorization_code, refresh_token]
+      with response_types_supported [code].
+  - id: rfc7636-pkce
+    conforms: true
+    evidence: 'code_challenge_methods_supported: ["S256"] in the RFC 8414 metadata document.'
+  - id: odata-v4
+    conforms: true
+    domain_standard: true
+    evidence: >-
+      https://www.borgwarner.com/api/default/$metadata returned HTTP 401 with the response
+      headers "odata-version: 4.0" and "content-type: application/json; odata.metadata=minimal",
+      and an OData-shaped error envelope {"error":{"code":"Unauthorized",...}}. The service
+      speaks OData v4; the $metadata CSDL document itself is auth-gated
+      (WWW-Authenticate: Bearer, and Cookie realm="https://www.borgwarner.com/") so no
+      contract could be harvested. Observed 2026-09-04.
+    gated: true
+  - id: openid-connect
+    conforms: false
+    evidence: /.well-known/openid-configuration returned 404 on every resolving host.
+  - id: rfc9116-security-txt
+    conforms: false
+    evidence: /.well-known/security.txt returned 404 on www.borgwarner.com and portal.borgwarner.com.
+  - id: a2a-agent-card
+    conforms: false
+    evidence: /.well-known/agent-card.json and /.well-known/agent.json both 404 on every resolving host.
+  - id: apis-json
+    conforms: false
+    evidence: /apis.json, /apis.yml and /.well-known/apis.json all 404 on www.borgwarner.com.
+  - id: rfc9457-problem-details
+    conforms: false
+    evidence: >-
+      The only observable error envelope is the OData v4 {"error":{"code":...,"message":...}}
+      shape, not application/problem+json.
+not_assessed:
+  - id: x12-edifact
+    reason: >-
+      BorgWarner runs a real X12 / EDIFACT trading-partner surface with its suppliers
+      (the supplier EDI readiness survey at /legal/customer-documents lets a partner
+      select X12 or EDIFACT), but the message-type implementation guidelines are issued
+      to onboarded suppliers rather than published, so no conformance can be asserted
+      from a document this pass fetched.
+    evidence: https://www.borgwarner.com/legal/customer-documents (HTTP 200)
+  - id: ocpp
+    reason: >-
+      Third-party charge-point-management vendors list BorgWarner DC fast chargers as
+      OCPP-compatible, but BorgWarner publishes no first-party statement of an OCPP
+      version or profile. A vendor's claim about a provider is not the provider's claim.

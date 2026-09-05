@@ -35,7 +35,7 @@ accessModel:
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/borgwarner.png
 access: 3rd-Party
 created: '2026-03-21'
-modified: '2026-04-21'
+modified: '2026-09-04'
 position: Consuming
 description: >-
   BorgWarner is a global automotive supplier designing and manufacturing propulsion
@@ -61,6 +61,24 @@ common:
     url: https://www.borgwarner.com/sustainability
   - url: https://www.borgwarner.com/newsroom/press-releases
     type: Blog
+  - type: WellKnown
+    url: well-known/borgwarner-well-known.yml
+  - type: Conformance
+    url: conformance/borgwarner-conformance.yml
+  - type: Authentication
+    url: authentication/borgwarner-authentication.yml
+  - type: LLMsTxt
+    url: llms/borgwarner-llms.txt
+  - type: Packages
+    url: packages/borgwarner-packages.yml
+  - type: Plans
+    url: plans/borgwarner-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/borgwarner-rate-limits.yml
+  - type: TermsOfService
+    url: https://www.borgwarner.com/legal/terms-of-use
+  - type: PrivacyPolicy
+    url: https://www.borgwarner.com/docs/default-source/legal-documents/us-privacy-policy.pdf
 properties:
   - type: x-domain
     value: borgwarner.com
@@ -91,3 +109,27 @@ maintainers:
   - FN: Kin Lane
     email: info@apievangelist.com
 specificationVersion: '0.23'
+x-enrichment:
+  date: '2026-09-04'
+  status: minimal
+  artifacts_added: 8
+  pass: local-v3
+x-coverage:
+  state: none
+  reason: not-a-software-company
+  detail: >-
+    BorgWarner sells propulsion hardware to vehicle OEMs under negotiated supply programs
+    and machine-to-machine integration runs over supplier EDI (X12/EDIFACT), not HTTP —
+    api., developer. and docs.borgwarner.com do not resolve, and the only API-shaped
+    surface on the domain is the Sitefinity CMS OData v4 service at /api/default, which
+    401s to anonymous callers.
+  evidence:
+    - url: https://www.borgwarner.com/api/default/$metadata
+      status: 401
+    - url: https://www.borgwarner.com/openapi.json
+      status: 404
+    - url: https://www.borgwarner.com/.well-known/oauth-authorization-server
+      status: 200
+    - url: https://api.github.com/orgs/borgwarner
+      status: 404
+  checked: '2026-09-04'

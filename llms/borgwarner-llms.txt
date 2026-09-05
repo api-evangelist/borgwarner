@@ -1,0 +1,60 @@
+# BorgWarner
+
+> BorgWarner Inc. (NYSE: BWA) is a global automotive supplier founded in 1928 and
+> headquartered in Auburn Hills, Michigan. It designs and manufactures propulsion
+> systems, thermal management, battery systems, charging solutions and power
+> electronics for combustion, hybrid and electric vehicles, and has extended the
+> same power-conversion and energy-storage engineering into industrial and data
+> center power. BorgWarner is a hardware supplier: as of 2026-09-04 it publishes
+> no public API, no developer portal, and no machine-readable API contract.
+
+## Status for agents
+
+- There is **no BorgWarner API** an agent can call. No OpenAPI, AsyncAPI, GraphQL SDL,
+  gRPC .proto or WSDL is published anywhere on borgwarner.com.
+- `api.borgwarner.com`, `developer.borgwarner.com` and `docs.borgwarner.com` do not
+  resolve in DNS. There is no GitHub organization and no client library in any public
+  package registry.
+- The one API-shaped surface on the domain is the Progress Sitefinity CMS OData v4
+  service at `https://www.borgwarner.com/api/default`, which returns HTTP 401 to
+  anonymous callers. It is the website platform's own service, not a product API.
+- BorgWarner does integrate with partners machine-to-machine, but over **EDI**
+  (X12 or EDIFACT) through the supplier program, not over HTTP APIs. The implementation
+  guidelines are issued to onboarded suppliers.
+- Do not attempt to synthesise a BorgWarner API contract. There is nothing to call.
+
+## Company
+
+- [BorgWarner](https://www.borgwarner.com): corporate site
+- [Mobility Technologies](https://www.borgwarner.com/technologies): battery systems, eMotors, power electronics, EV transmissions, thermal management, boosting
+- [Industrial Solutions](https://www.borgwarner.com/industrial-solutions): power generation, power conversion, energy storage, data center power
+- [Aftermarket](https://www.borgwarner.com/aftermarket): turbochargers, glow plugs, ignition, exhaust gas management, transmission parts
+- [Suppliers](https://www.borgwarner.com/suppliers): supplier program, access request form, supplier terms
+- [Investors](https://www.borgwarner.com/investors): SEC filings, annual reports, corporate governance
+- [Newsroom](https://www.borgwarner.com/newsroom): press releases and events
+- [Careers](https://www.borgwarner.com/careers)
+- [Sustainability](https://www.borgwarner.com/company/sustainability)
+
+## Legal
+
+- [Legal Policies & Privacy](https://www.borgwarner.com/legal)
+- [Terms of Use](https://www.borgwarner.com/legal/terms-of-use)
+- [US Website Privacy Policy (PDF)](https://www.borgwarner.com/docs/default-source/legal-documents/us-privacy-policy.pdf)
+- [Customer Documents (incl. EDI readiness survey)](https://www.borgwarner.com/legal/customer-documents)
+
+## Machine-readable artifacts published by BorgWarner
+
+- [/.well-known/oauth-authorization-server](https://www.borgwarner.com/.well-known/oauth-authorization-server): RFC 8414 OAuth 2.0 Authorization Server Metadata for the Sitefinity CMS (HTTP 200, application/json)
+
+## API Evangelist artifacts for this company
+
+- [apis.yml](https://raw.githubusercontent.com/api-evangelist/borgwarner/refs/heads/main/apis.yml)
+- [well-known probe](https://raw.githubusercontent.com/api-evangelist/borgwarner/refs/heads/main/well-known/borgwarner-well-known.yml)
+- [conformance](https://raw.githubusercontent.com/api-evangelist/borgwarner/refs/heads/main/conformance/borgwarner-conformance.yml)
+- [authentication](https://raw.githubusercontent.com/api-evangelist/borgwarner/refs/heads/main/authentication/borgwarner-authentication.yml)
+- [domain security](https://raw.githubusercontent.com/api-evangelist/borgwarner/refs/heads/main/security/borgwarner-domain-security.yml)
+- [packages](https://raw.githubusercontent.com/api-evangelist/borgwarner/refs/heads/main/packages/borgwarner-packages.yml)
+- [plans](https://raw.githubusercontent.com/api-evangelist/borgwarner/refs/heads/main/plans/borgwarner-plans-pricing.yml)
+- [rate limits](https://raw.githubusercontent.com/api-evangelist/borgwarner/refs/heads/main/rate-limits/borgwarner-rate-limits.yml)
+
+<!-- generated: 2026-09-04 | method: generated | source: apis.yml + repo artifacts + probes on borgwarner.com; https://www.borgwarner.com/llms.txt returned 404 -->
