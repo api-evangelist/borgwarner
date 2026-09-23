@@ -1,7 +1,9 @@
 ---
 title: We're excited to introduce our all new Turbine Generator ...
 url: https://www.instagram.com/p/DUoA8sFkgPc/
-date: '2026-05-25'
+published: ''
+date_basis: harvested
+harvested: '2026-05-25'
 query: '"BorgWarner" press release artificial intelligence'
 position: 4
 source: serpapi-google

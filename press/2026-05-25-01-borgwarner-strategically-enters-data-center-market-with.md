@@ -1,7 +1,9 @@
 ---
 title: BorgWarner Strategically Enters Data Center Market with ...
 url: https://www.borgwarner.com/newsroom/press-releases/2026/02/11/borgwarner-strategically-enters-data-center-market-with-power-generation-solution-award
-date: '2026-05-25'
+published: '2026-02-11'
+date_basis: url-derived
+harvested: '2026-05-25'
 query: '"BorgWarner" press release artificial intelligence'
 position: 1
 source: serpapi-google

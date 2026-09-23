@@ -1,7 +1,9 @@
 ---
 title: BorgWarner Partners with Manufacture 2030 to Reduce ...
 url: https://www.borgwarner.com/newsroom/press-releases/2024/03/06/borgwarner-partners-with-manufacture-2030-to-reduce-supply-chain-emissions
-date: '2026-05-25'
+published: '2024-03-06'
+date_basis: url-derived
+harvested: '2026-05-25'
 query: '"BorgWarner" press release artificial intelligence'
 position: 5
 source: serpapi-google
