@@ -1,4 +1,4 @@
-# BorgWarner (borgwarner)
+# BorgWarner
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,60 +64,95 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-BorgWarner is a global automotive supplier designing and manufacturing propulsion systems, thermal management, battery systems, charging solutions, and power electronics for combustion, hybrid, and electric vehicles. The company accelerates the world's transition to clean, efficient mobility across passenger and commercial vehicle markets. BorgWarner is a Fortune 500 company traded on the NYSE (BWA) and headquartered in Auburn Hills, Michigan.
+BorgWarner is a global automotive supplier designing and manufacturing propulsion systems, thermal management, battery systems, charging solutions, and power electronics for combustion, hybrid, and electric vehicles. The company accelerates the world's transition to clean, efficient mobility across passenger and commercial vehicle markets.
 
-**URL:** [https://raw.githubusercontent.com/api-evangelist/borgwarner/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/borgwarner/refs/heads/main/apis.yml)
+**Areas:** Automotive · Connected Vehicles · Clean Mobility · Electric Vehicles · Propulsion Systems · Fortune 500
 
-## Scope
+## BorgWarner on APIs.io
 
-- **Type:** Index
-- **Position:** Consumer
-- **Access:** 3rd-Party
+Everything profiled for BorgWarner is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/borgwarner/](https://apis.io/providers/borgwarner/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### Published properties
 
-- Automotive
-- Connected Vehicles
-- Clean Mobility
-- Electric Vehicles
-- Propulsion Systems
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## Timestamps
+#### Security (2)
 
-- **Created:** 2026-03-21
-- **Modified:** 2026-04-21
+Authentication, trust centre, and vulnerability disclosure.
 
-## APIs
+- [Borgwarner Authentication](https://apis.io/security/borgwarner/borgwarner-authentication/)
+- [Borgwarner Domain Security](https://apis.io/security/borgwarner/borgwarner-domain-security/)
 
-No public APIs have been documented yet. Contributions welcome.
+#### Plans and pricing (1)
 
-## Common Properties
+Published plans, tiers and prices.
+
+- [Borgwarner Plans Pricing](https://apis.io/plans/borgwarner/borgwarner-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Borgwarner Rate Limits](https://apis.io/rate-limits/borgwarner/borgwarner-rate-limits/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://www.borgwarner.com)
-- [Investor Relations](https://www.borgwarner.com/investors)
-- [Newsroom](https://www.borgwarner.com/newsroom)
-- [Careers](https://www.borgwarner.com/careers)
-- [Sustainability](https://www.borgwarner.com/sustainability)
+- [Blog](https://www.borgwarner.com/newsroom/press-releases)
+- [Terms of service](https://www.borgwarner.com/legal/terms-of-use)
+- [Privacy policy](https://www.borgwarner.com/docs/default-source/legal-documents/us-privacy-policy.pdf)
 
-## Products
+## API Evangelist rating
 
-- Turbochargers and eBoosters
-- High Voltage Coolant Heaters
-- Battery Management Systems
-- eMotors and Power Electronics
-- Transmission Systems and Thermal Management
-- DC Fast Charging and Wireless Charging Systems
+**Kin Score 16.3** — emerging · rubric 0.24.0 · scored 2026-10-17
 
-## About
+| Facet | Score |
+|---|---|
+| Discoverability | 56.3 |
+| Contract quality | 0.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 0.0 |
+| Developer ergonomics | 14.3 |
+| Access clarity | 21.1 |
 
-- **Founded:** 1928
-- **Headquarters:** Auburn Hills, Michigan, USA
-- **Stock Ticker:** BWA (NYSE)
-- **Industry:** Automotive Components (SIC 3714)
-- **Employees:** ~40,000
+**Agent readiness 13.3** — agent-aware
 
-## Maintainers
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | served (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | served (partial credit) |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
 
-**FN:** Kin Lane
+**Regulatory alignment 24.5** — Horizontal (data, software, accessibility, platform)
 
-**Email:** info@apievangelist.com
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/borgwarner/](https://apis.io/providers/borgwarner/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for BorgWarner: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/borgwarner/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
